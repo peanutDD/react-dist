@@ -23,7 +23,7 @@ export default class Home extends Component {
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
             <div>your name is {this.props.name}, your age is {this.state.age}</div>
-            <button onClick={() => {this.onMakeOlder()}} classN="btn btn-primary">make me older</button>
+            <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary">make me older</button>
             <div>
               <h4>hobbies</h4>
               <ul>
