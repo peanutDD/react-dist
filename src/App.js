@@ -6,6 +6,10 @@ import Header from './components/Header';
 import Home from './components/Home';
 
 class App extends Component {
+
+  onGreeting(age) {
+    console.log('parent: ' + age);
+  }
   render() {
     const user = {
       name: "Anna",
@@ -25,7 +29,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Home name={"Max"} initialAge={12} user={user}>
+            <Home name={"Max"} initialAge={12} user={user} greet={this.onGreeting}>
               <p>I am child</p>
             </Home>
           </div>

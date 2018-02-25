@@ -17,6 +17,10 @@ export default class Home extends Component {
       age: this.state.age + 5
     });
   }
+
+  handleGreeting() {
+    this.props.greet(this.state.age)
+  }
   render() {
     return (
       <div className="container">
@@ -24,6 +28,8 @@ export default class Home extends Component {
           <div className="col-xs-1 col-xs-offset-11">
             <div>your name is {this.props.name}, your age is {this.state.age}</div>
             <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary">make me older</button>
+            <hr />
+            <button className="btn btn-primary" onClick={this.handleGreeting.bind(this)}>Greet</button>
             <div>
               <h4>hobbies</h4>
               <ul>
@@ -42,5 +48,6 @@ Home.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   user: PropTypes.object,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  greet: PropTypes.func
 };
